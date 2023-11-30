@@ -8,11 +8,11 @@ https://chat.openai.com/share/ebf6cb13-b75d-4aa0-9f3d-c7ab89eb1800
 https://chat.openai.com/share/fcf21c68-0b1f-4d71-a39f-9a9430c07dad  
 https://chat.openai.com/share/aa2ddab7-5986-4fa3-947a-a3cea29120bb  
   
-#you need to install a few things  
+# Prerequisite  
 #install python3  
 winget install python3  
   
-#Flask and its libraries
+# Flask and its libraries  
 pip install Flask Flask-WTF Flask-Login Flask-Bcrypt Flask-SQLAlchemy
   
 #run  
