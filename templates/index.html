@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJSU Library</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message[1] }}" role="alert">
+                    {{ message[1] }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1>Welcome to SJSU Library</h1>
+    <p>This is the main page content.</p>
+    <p>Here, as a Student, you can borrow books from the library.</p>
+    <p>As a Librarian, you can borrow or manage the books in the library.</p>
+    <p>As the Head Librarian, you can borrow, manage, add/remove books from the library.</p>
+
+    <p><a href="{{ url_for('login') }}">Login</a></p>
+    <p><a href="{{ url_for('register') }}">Register</a></p>
+</body>
+</html>

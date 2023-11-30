@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SJSU Library</title>
+</head>
+<body>
+    <h1>Register</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endwith %}
+            <form method="post" action="{{ url_for('register') }}">
+                {{ form.hidden_tag() }}
+                {{ form.username.label }} {{ form.username(size=20) }}<br>
+                {{ form.password.label }} {{ form.password(size=20) }}<br>
+                {{ form.role.label }} {{ form.role() }}<br>
+                {{ form.submit }}
+            </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+</body>
+</html>
